@@ -1,0 +1,10 @@
+self.addEventListener("push", (event) => {
+  let title = (event.data && event.data.text()) || "Yay a message333";
+  let body = "We have received a push message33333333333333333";
+  let tag = "push-simple-demo-notification-tag";
+  let icon = '/assets/my-logo-120x120.png';
+
+  event.waitUntil(
+    self.registration.showNotification(title, { body, icon, tag })
+  )
+});
